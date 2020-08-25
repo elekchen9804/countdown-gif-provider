@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/elekchen9804/countdown-gif-provider#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dayjs": "^1.8.34",
+    "express": "^4.17.1",
+    "gifencoder": "^2.0.1"
   }
 }
