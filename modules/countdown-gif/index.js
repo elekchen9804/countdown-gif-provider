@@ -9,7 +9,6 @@ const fs = require('fs');
 const path = require('path');
 // app root path
 const appDir = path.dirname(require.main.filename);
-const imagePath = appDir + '/data/myanimated.gif';
 
 module.exports = {
     generateGif: (width = 300, height = 100) => {
@@ -18,7 +17,7 @@ module.exports = {
         let dateDiff = endDateTime.diff(currentDateTime, 'ms');
         const encoder = new GIFEncoder(width, height);
         // stream the results as they are available into myanimated.gif
-        encoder.createReadStream().pipe(fs.createWriteStream(imagePath));
+        encoder.createReadStream().pipe(fs.createWriteStream(appDir + '/data/myanimated.gif'));
 
         encoder.start();
         encoder.setRepeat(0);   // 0 for repeat, -1 for no-repeat
@@ -49,15 +48,15 @@ module.exports = {
         }
 
         encoder.finish();
-    },
-    convertImgToBase64: () => {
-        return base64_encode(imagePath);
-
-        function base64_encode(file) {
-            // read binary data
-            var bitmap = fs.readFileSync(file);
-            // convert binary data to base64 encoded string
-            return new Buffer.from(bitmap).toString('base64');
-        }
     }
+    // convertImgToBase64: () => {
+    //     return base64_encode(imagePath);
+
+    //     function base64_encode(file) {
+    //         // read binary data
+    //         var bitmap = fs.readFileSync(file);
+    //         // convert binary data to base64 encoded string
+    //         return new Buffer.from(bitmap).toString('base64');
+    //     }
+    // }
 }
