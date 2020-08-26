@@ -34,7 +34,7 @@ module.exports = {
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
-        for (let i = 60; i >= 0; i--) {
+        for (let i = 300; i >= 0; i--) {
             // Convert time format
             let formattedTime = prettyMs(dateDiff, { secondsDecimalDigits: 0 });
 
