@@ -22,7 +22,7 @@ module.exports = {
         encoder.start();
         encoder.setRepeat(0);   // 0 for repeat, -1 for no-repeat
         encoder.setDelay(1000);  // frame delay in ms
-        encoder.setQuality(20); // image quality. 10 is default.
+        encoder.setQuality(10); // image quality. 10 is default.
 
         // use node-canvas
         const canvas = createCanvas(width, height);
@@ -33,7 +33,7 @@ module.exports = {
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
-        for (let i = 300; i >= 0; i--) {
+        for (let i = 120; i >= 0; i--) {
             // Convert time format
             let formattedTime = prettyMs(dateDiff, { secondsDecimalDigits: 0 });
 
